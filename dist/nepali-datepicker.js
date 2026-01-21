@@ -3,6 +3,7 @@
  * Author: Om Pandey
  * Version: 2.3.0
  * Website: https://www.omkumarpandey.com.np/
+ * Fixed: Display div hidden by default
  */
 
 (function(global, factory) {
@@ -153,6 +154,7 @@
                 return;
             }
 
+            // FIXED: showDisplay is now false by default
             this.opts = {
                 mode: 'bilingual',
                 theme: 'default',
@@ -163,7 +165,7 @@
                 showToday: true,
                 showClear: true,
                 showClose: true,
-                showDisplay: true,
+                showDisplay: false,  // FIXED: Changed from true to false
                 closeOnSelect: true,
                 placeholder: 'मिति छान्नुहोस्',
                 placeholderEn: 'Select Date',
@@ -354,30 +356,25 @@
 
         position() {
             const inputRect = this.input.getBoundingClientRect();
-            const calHeight = 420; // Approximate height
+            const calHeight = 420;
             const calWidth = 340;
             const viewportHeight = window.innerHeight;
             const viewportWidth = window.innerWidth;
             const gap = 8;
 
-            // Calculate space
             const spaceBelow = viewportHeight - inputRect.bottom - gap;
             const spaceAbove = inputRect.top - gap;
 
-            // Determine position
             let top, left;
             let positionTop = false;
 
             if (spaceBelow >= calHeight || spaceBelow >= spaceAbove) {
-                // Position below
                 top = inputRect.bottom + gap;
             } else {
-                // Position above
                 top = inputRect.top - calHeight - gap;
                 positionTop = true;
             }
 
-            // Horizontal position
             left = inputRect.left;
             if (left + calWidth > viewportWidth - gap) {
                 left = viewportWidth - calWidth - gap;
@@ -386,7 +383,6 @@
                 left = gap;
             }
 
-            // Apply styles
             this.cal.style.top = top + 'px';
             this.cal.style.left = left + 'px';
             this.cal.classList.toggle('ndp-position-top', positionTop);
@@ -481,12 +477,10 @@
             const today = getToday();
             let html = '';
 
-            // Empty cells
             for (let i = 0; i < firstDay; i++) {
                 html += '<div class="ndp-day ndp-empty"></div>';
             }
 
-            // Day cells
             for (let d = 1; d <= daysInMonth; d++) {
                 const ad = bsToAd(this.year, this.month, d);
                 const dow = (firstDay + d - 1) % 7;
@@ -509,7 +503,6 @@
 
             this.days.innerHTML = html;
 
-            // Bind click events
             this.days.querySelectorAll('.ndp-day:not(.ndp-empty)').forEach(el => {
                 el.addEventListener('click', () => {
                     this.selectDate(this.year, this.month, parseInt(el.dataset.day));
@@ -608,7 +601,8 @@
         }
 
         updateDisplay() {
-            if (!this.display || !this.selected) {
+            // Only update display if showDisplay is true and display element exists
+            if (!this.opts.showDisplay || !this.display || !this.selected) {
                 if (this.display) this.display.classList.remove('ndp-show');
                 return;
             }
@@ -652,13 +646,11 @@
         open() {
             if (this.isOpen) return;
             
-            // Close any other open picker
             closeActivePicker();
 
             this.isOpen = true;
             this.cal.style.zIndex = ++globalZIndex;
             
-            // Position first, then show
             this.position();
             this.cal.classList.add('ndp-open');
             this.showDaysView();
