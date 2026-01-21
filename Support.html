@@ -1,0 +1,2372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Support Om Pandey | Fuel Open Source Development</title>
+    <meta name="description" content="Support Om Pandey's open source work. Your donation helps maintain Nepali Date Picker and other free tools for the developer community.">
+    <meta name="author" content="Om Pandey">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Support Om Pandey - Open Source Developer">
+    <meta property="og:description" content="Help support open source development. Your donation keeps free tools alive!">
+    <meta property="og:image" content="https://nepalidate.omkumarpandey.com.np/MainLogo.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="MainLogo.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="MainLogo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="MainLogo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&family=Noto+Sans+Devanagari:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* ============================================
+           Reset & Variables
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-nepali: 'Noto Sans Devanagari', sans-serif;
+            
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --text-white: #ffffff;
+            
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-dark: #4f46e5;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            
+            --success: #10b981;
+            --warning: #f59e0b;
+            --heart: #ef4444;
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.2);
+            
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-full: 9999px;
+            
+            --transition: 200ms ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           Preloader
+           ============================================ */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+            animation: loadBar 1.8s ease-out forwards;
+        }
+
+        @keyframes loadBar {
+            0% { width: 0%; }
+            30% { width: 40%; }
+            60% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        .preloader-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .preloader-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-xl);
+            animation: preloaderPulse 1.5s ease-in-out infinite;
+        }
+
+        .preloader-icon i {
+            font-size: 36px;
+            color: white;
+        }
+
+        @keyframes preloaderPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px 10px rgba(99, 102, 241, 0.2); }
+        }
+
+        .preloader-text {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .preloader-spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid var(--border-light);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ============================================
+           Scroll Progress
+           ============================================ */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--accent-gradient);
+            z-index: 10000;
+        }
+
+        /* ============================================
+           Navigation
+           ============================================ */
+        .nav {
+            position: sticky;
+            top: 3px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0 24px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 38px;
+            height: 38px;
+        }
+
+        .nav-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .nav-title span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all var(--transition);
+        }
+
+        .nav-link:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .nav-link i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--accent-gradient);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all var(--transition);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .nav-cta i {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ============================================
+           Hero Section
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 64px);
+            display: flex;
+            align-items: center;
+            padding: 80px 24px;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hero-bg-gradient {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.5;
+        }
+
+        .hero-bg-1 {
+            top: -200px;
+            right: -100px;
+            background: rgba(99, 102, 241, 0.15);
+        }
+
+        .hero-bg-2 {
+            bottom: -200px;
+            left: -100px;
+            background: rgba(168, 85, 247, 0.1);
+        }
+
+        .hero-bg-3 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(139, 92, 246, 0.08);
+        }
+
+        .hero-container {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 24px;
+            width: fit-content;
+        }
+
+        .hero-badge-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .hero-badge-icon i {
+            width: 12px;
+            height: 12px;
+            color: white;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(40px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .hero-title-gradient {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-family: var(--font-body);
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 480px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hero-stat-value {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .hero-stat-label {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            transition: all var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .hero-btn i {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hero-btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35);
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.45);
+        }
+
+        .hero-btn-secondary {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-medium);
+        }
+
+        .hero-btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Hero Scanner Card */
+        .hero-scanner {
+            position: relative;
+        }
+
+        .scanner-card {
+            position: relative;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl), var(--shadow-glow);
+        }
+
+        .scanner-card-header {
+            padding: 24px 28px;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .scanner-card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .scanner-card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-md);
+        }
+
+        .scanner-card-icon i {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .scanner-card-text h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2px;
+        }
+
+        .scanner-card-text p {
+            font-family: var(--font-body);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .scanner-card-badge {
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .scanner-card-body {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .scanner-image-container {
+            position: relative;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+            border: 2px dashed var(--accent);
+            border-radius: var(--radius-xl);
+        }
+
+        .scanner-image-container::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            background: var(--accent-gradient);
+            border-radius: calc(var(--radius-xl) + 6px);
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .scanner-image {
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            display: block;
+        }
+
+        .scanner-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .scanner-method {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .scanner-method i {
+            width: 14px;
+            height: 14px;
+            color: var(--accent);
+        }
+
+        /* Floating Elements */
+        .float-element {
+            position: absolute;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-1 {
+            top: 10%;
+            left: -5%;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-lg);
+            opacity: 0.1;
+            animation-delay: 0s;
+        }
+
+        .float-2 {
+            bottom: 20%;
+            right: -5%;
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            opacity: 0.08;
+            animation-delay: 2s;
+        }
+
+        .float-3 {
+            top: 40%;
+            right: 10%;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-md);
+            opacity: 0.12;
+            animation-delay: 4s;
+            transform: rotate(45deg);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* ============================================
+           Section Styles
+           ============================================ */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-dark {
+            background: var(--bg-dark);
+            color: var(--text-white);
+        }
+
+        .section-alt {
+            background: var(--bg-secondary);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header-inner {
+            padding-left: 24px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .section-dark .section-header-inner {
+            border-left-color: var(--accent-light);
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .section-dark .section-label {
+            background: rgba(129, 140, 248, 0.15);
+            color: var(--accent-light);
+        }
+
+        .section-label i {
+            width: 14px;
+            height: 14px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .section-dark .section-title {
+            color: var(--text-white);
+        }
+
+        .section-subtitle {
+            font-family: var(--font-body);
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 550px;
+            line-height: 1.7;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ============================================
+           Why Support Section
+           ============================================ */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .reason-card {
+            position: relative;
+            padding: 36px 28px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .reason-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .reason-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .reason-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+            border-radius: var(--radius-lg);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .reason-card:hover .reason-icon {
+            background: var(--accent-gradient);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .reason-icon i {
+            font-size: 24px;
+            color: var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        .reason-card:hover .reason-icon i {
+            color: white;
+        }
+
+        .reason-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .reason-desc {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           How It Works Section
+           ============================================ */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        .steps-line {
+            position: absolute;
+            left: 32px;
+            top: 60px;
+            bottom: 60px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent), var(--accent-light), rgba(99, 102, 241, 0.2));
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 28px;
+            padding: 32px 0;
+            position: relative;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+            z-index: 1;
+        }
+
+        .step-content {
+            flex: 1;
+            padding-top: 8px;
+        }
+
+        .step-title {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            max-width: 500px;
+        }
+
+        /* ============================================
+           Scanner Section (Large)
+           ============================================ */
+        .scanner-section {
+            padding: 100px 24px;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .scanner-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl), var(--shadow-glow);
+        }
+
+        .scanner-header {
+            padding: 32px 40px;
+            background: var(--accent-gradient);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scanner-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: shimmer 8s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .scanner-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .scanner-header-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-lg);
+            margin: 0 auto 20px;
+        }
+
+        .scanner-header-icon i {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .scanner-header-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .scanner-header-subtitle {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .scanner-body {
+            padding: 48px 40px;
+            display: flex;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .scanner-qr-container {
+            flex-shrink: 0;
+        }
+
+        .scanner-qr-wrapper {
+            position: relative;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(168, 85, 247, 0.08));
+            border: 3px dashed var(--accent);
+            border-radius: var(--radius-xl);
+        }
+
+        .scanner-qr-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            background: var(--accent-gradient);
+            border-radius: calc(var(--radius-xl) + 8px);
+            z-index: -1;
+            opacity: 0.12;
+            animation: qrPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes qrPulse {
+            0%, 100% { opacity: 0.12; transform: scale(1); }
+            50% { opacity: 0.2; transform: scale(1.02); }
+        }
+
+        .scanner-qr {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            display: block;
+        }
+
+        .scanner-details {
+            flex: 1;
+        }
+
+        .scanner-details-title {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+        }
+
+        .scanner-details-text {
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .scanner-payment-methods {
+            margin-bottom: 28px;
+        }
+
+        .scanner-payment-label {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+
+        .scanner-payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            transition: all var(--transition);
+        }
+
+        .payment-method:hover {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .payment-method-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-sm);
+        }
+
+        .payment-method-icon i {
+            width: 16px;
+            height: 16px;
+            color: white;
+        }
+
+        .payment-method-name {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .scanner-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(99, 102, 241, 0.08);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent);
+        }
+
+        .scanner-note-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .scanner-note-text {
+            font-family: var(--font-body);
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           Impact Section
+           ============================================ */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .impact-card {
+            padding: 36px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            transition: all var(--transition);
+        }
+
+        .impact-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .impact-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-lg);
+            margin: 0 auto 20px;
+        }
+
+        .impact-icon i {
+            width: 26px;
+            height: 26px;
+            color: white;
+        }
+
+        .impact-value {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 6px;
+        }
+
+        .impact-label {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ============================================
+           Support Options Section
+           ============================================ */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .option-card {
+            position: relative;
+            padding: 40px 32px;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .option-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl), 0 0 50px rgba(99, 102, 241, 0.15);
+        }
+
+        .option-card.featured::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        }
+
+        .option-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 6px 20px;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .option-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .option-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .option-icon {
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+            border-radius: var(--radius-xl);
+            margin: 0 auto 24px;
+            transition: all 0.3s ease;
+        }
+
+        .option-card:hover .option-icon {
+            background: var(--accent-gradient);
+            transform: scale(1.1);
+        }
+
+        .option-icon i {
+            font-size: 32px;
+            color: var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        .option-card:hover .option-icon i {
+            color: white;
+        }
+
+        .option-name {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .option-price {
+            font-family: var(--font-heading);
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .option-price span {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .option-desc {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .option-features {
+            list-style: none;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .option-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .option-feature:last-child {
+            border-bottom: none;
+        }
+
+        .option-feature i {
+            width: 18px;
+            height: 18px;
+            color: var(--success);
+            flex-shrink: 0;
+        }
+
+        .option-btn {
+            display: block;
+            width: 100%;
+            padding: 16px 28px;
+            background: var(--accent-gradient);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            border-radius: var(--radius-lg);
+            transition: all var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .option-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        /* ============================================
+           Message Section
+           ============================================ */
+        .message-section {
+            padding: 100px 24px;
+            background: var(--bg-secondary);
+        }
+
+        .message-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .message-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            margin: 0 auto 32px;
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .message-icon i {
+            width: 36px;
+            height: 36px;
+            color: white;
+        }
+
+        .message-title {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .message-text {
+            font-family: var(--font-body);
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .message-nepali {
+            font-family: var(--font-nepali);
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+        }
+
+        .message-signature {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 36px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .signature-avatar {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .signature-info {
+            text-align: left;
+        }
+
+        .signature-name {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .signature-role {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* ============================================
+           Footer
+           ============================================ */
+        .footer {
+            padding: 60px 24px 32px;
+            background: var(--bg-dark);
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            width: 48px;
+            height: 48px;
+        }
+
+        .footer-brand-text {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-brand-text span {
+            color: var(--accent-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-link i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social-link {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .footer-social-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .footer-social-link i {
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            text-align: center;
+        }
+
+        .footer-copy {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-copy a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .footer-copy a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-heart {
+            color: var(--heart);
+        }
+
+        /* ============================================
+           Responsive
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-content {
+                text-align: center;
+                align-items: center;
+            }
+
+            .hero-description {
+                max-width: 600px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .reasons-grid,
+            .options-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .option-card.featured {
+                transform: scale(1);
+            }
+
+            .option-card.featured:hover {
+                transform: translateY(-8px);
+            }
+
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .scanner-body {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .scanner-details {
+                text-align: center;
+            }
+
+            .scanner-note {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 20px;
+                min-height: auto;
+            }
+
+            .section {
+                padding: 70px 20px;
+            }
+
+            .reasons-grid,
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .steps-line {
+                display: none;
+            }
+
+            .step-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .step-content {
+                padding-top: 0;
+            }
+
+            .scanner-wrapper {
+                border-radius: var(--radius-xl);
+            }
+
+            .scanner-header {
+                padding: 28px 24px;
+            }
+
+            .scanner-body {
+                padding: 32px 24px;
+            }
+
+            .scanner-qr {
+                width: 220px;
+                height: 220px;
+            }
+
+            .scanner-payment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .hero-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scanner-qr {
+                width: 200px;
+                height: 200px;
+            }
+
+            .message-signature {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .signature-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-bar"></div>
+        <div class="preloader-content">
+            <div class="preloader-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <span class="preloader-text">Loading...</span>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="MainLogo.png" alt="Om Pandey" class="nav-logo">
+                <span class="nav-title">Support <span>Me</span></span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i data-lucide="arrow-left"></i>
+                    Back to Docs
+                </a>
+                <a href="#why-support" class="nav-link">
+                    <i data-lucide="heart"></i>
+                    Why Support
+                </a>
+                <a href="#scan-pay" class="nav-link">
+                    <i data-lucide="qr-code"></i>
+                    Scan & Pay
+                </a>
+                <a href="https://www.omkumarpandey.com.np/" target="_blank" class="nav-cta">
+                    <i data-lucide="globe"></i>
+                    Portfolio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-bg-gradient hero-bg-1"></div>
+            <div class="hero-bg-gradient hero-bg-2"></div>
+            <div class="hero-bg-gradient hero-bg-3"></div>
+        </div>
+        
+        <div class="float-element float-1"></div>
+        <div class="float-element float-2"></div>
+        <div class="float-element float-3"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="hero-badge-icon">
+                        <i data-lucide="sparkles"></i>
+                    </span>
+                    Open Source Supporter
+                </div>
+                
+                <h1 class="hero-title">
+                    Fuel the Code,<br>
+                    <span class="hero-title-gradient">Support the Dream</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Your contribution keeps open source projects alive. Help me continue 
+                    building free tools like Nepali Date Picker for developers worldwide. 
+                    Every support counts!
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">5+</span>
+                        <span class="hero-stat-label">Projects</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">1K+</span>
+                        <span class="hero-stat-label">Downloads</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">100%</span>
+                        <span class="hero-stat-label">Free & Open</span>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#scan-pay" class="hero-btn hero-btn-primary">
+                        <i data-lucide="heart"></i>
+                        Support Now
+                    </a>
+                    <a href="https://github.com/ompandey07" target="_blank" class="hero-btn hero-btn-secondary">
+                        <i data-lucide="github"></i>
+                        View Projects
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-scanner">
+                <div class="scanner-card">
+                    <div class="scanner-card-header">
+                        <div class="scanner-card-title">
+                            <div class="scanner-card-icon">
+                                <i data-lucide="qr-code"></i>
+                            </div>
+                            <div class="scanner-card-text">
+                                <h3>Quick Support</h3>
+                                <p>Scan with any payment app</p>
+                            </div>
+                        </div>
+                        <span class="scanner-card-badge">Instant</span>
+                    </div>
+                    
+                    <div class="scanner-card-body">
+                        <div class="scanner-image-container">
+                            <img src="Images/SupportScanner.jpeg" alt="Payment QR Code - Support Om Pandey" class="scanner-image">
+                        </div>
+                        
+                        <div class="scanner-methods">
+                            <div class="scanner-method">
+                                <i data-lucide="smartphone"></i>
+                                eSewa
+                            </div>
+                            <div class="scanner-method">
+                                <i data-lucide="wallet"></i>
+                                Khalti
+                            </div>
+                            <div class="scanner-method">
+                                <i data-lucide="credit-card"></i>
+                                IME Pay
+                            </div>
+                            <div class="scanner-method">
+                                <i data-lucide="banknote"></i>
+                                Bank Transfer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Support Section -->
+    <section class="section section-alt" id="why-support">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-inner">
+                    <div class="section-label">
+                        <i data-lucide="heart"></i>
+                        Why Support
+                    </div>
+                    <h2 class="section-title">Your Support Makes a Real Difference</h2>
+                    <p class="section-subtitle">
+                        Here's how your generous contribution helps fuel open source development 
+                        and benefits the developer community.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="reason-title">More Free Tools</h3>
+                    <p class="reason-desc">Your support enables me to create more free, open-source tools and libraries for developers worldwide.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3 class="reason-title">Bug Fixes & Updates</h3>
+                    <p class="reason-desc">Keep projects maintained with regular bug fixes, security patches, and new feature releases.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="reason-title">Better Documentation</h3>
+                    <p class="reason-desc">Create comprehensive tutorials, examples, and documentation for easier adoption.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="reason-title">Community Growth</h3>
+                    <p class="reason-desc">Build a stronger developer community in Nepal and beyond with workshops and resources.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="reason-title">Server & Hosting</h3>
+                    <p class="reason-desc">Cover hosting costs, CDN services, and domain renewals to keep everything running smoothly.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="reason-title">New Innovations</h3>
+                    <p class="reason-desc">Your support allows experimenting with new ideas and building innovative solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-inner">
+                    <div class="section-label">
+                        <i data-lucide="zap"></i>
+                        How It Works
+                    </div>
+                    <h2 class="section-title">Simple 3-Step Process</h2>
+                    <p class="section-subtitle">
+                        Supporting is quick and easy. Just follow these simple steps to make a contribution.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="steps-container">
+                <div class="steps-line"></div>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Open Your Payment App</h3>
+                        <p class="step-desc">Launch eSewa, Khalti, IME Pay, or any banking app that supports QR scanning on your phone.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Scan the QR Code</h3>
+                        <p class="step-desc">Point your camera at the QR code below. The payment details will be automatically filled in for you.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Enter Amount & Confirm</h3>
+                        <p class="step-desc">Enter any amount you'd like to contribute and confirm. You'll receive instant confirmation!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Scanner Section -->
+    <section class="scanner-section" id="scan-pay">
+        <div class="container">
+            <div class="scanner-wrapper">
+                <div class="scanner-header">
+                    <div class="scanner-header-content">
+                        <div class="scanner-header-icon">
+                            <i data-lucide="scan"></i>
+                        </div>
+                        <h2 class="scanner-header-title">Scan & Pay Instantly</h2>
+                        <p class="scanner-header-subtitle">Use your favorite payment app to scan and support</p>
+                    </div>
+                </div>
+                
+                <div class="scanner-body">
+                    <div class="scanner-qr-container">
+                        <div class="scanner-qr-wrapper">
+                            <img src="Images/SupportScanner.jpeg" alt="Payment QR Code - Support Om Pandey" class="scanner-qr">
+                        </div>
+                    </div>
+                    
+                    <div class="scanner-details">
+                        <h3 class="scanner-details-title">Quick & Secure Payment</h3>
+                        <p class="scanner-details-text">
+                            Simply open your payment app, scan the QR code, and enter any amount 
+                            you'd like to contribute. Whether it's Rs. 50 or Rs. 5000, every 
+                            contribution is deeply appreciated and helps keep open source alive!
+                        </p>
+                        
+                        <div class="scanner-payment-methods">
+                            <div class="scanner-payment-label">Accepted Payment Methods</div>
+                            <div class="scanner-payment-grid">
+                                <div class="payment-method">
+                                    <div class="payment-method-icon">
+                                        <i data-lucide="smartphone"></i>
+                                    </div>
+                                    <span class="payment-method-name">eSewa</span>
+                                </div>
+                                <div class="payment-method">
+                                    <div class="payment-method-icon">
+                                        <i data-lucide="wallet"></i>
+                                    </div>
+                                    <span class="payment-method-name">Khalti</span>
+                                </div>
+                                <div class="payment-method">
+                                    <div class="payment-method-icon">
+                                        <i data-lucide="credit-card"></i>
+                                    </div>
+                                    <span class="payment-method-name">IME Pay</span>
+                                </div>
+                                <div class="payment-method">
+                                    <div class="payment-method-icon">
+                                        <i data-lucide="landmark"></i>
+                                    </div>
+                                    <span class="payment-method-name">Connect IPS</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="scanner-note">
+                            <i data-lucide="info" class="scanner-note-icon"></i>
+                            <p class="scanner-note-text">
+                                All payments are secure and go directly to support development. 
+                                You can also contact me for alternative payment methods.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-inner">
+                    <div class="section-label">
+                        <i data-lucide="trending-up"></i>
+                        Impact
+                    </div>
+                    <h2 class="section-title">What We've Achieved Together</h2>
+                    <p class="section-subtitle">
+                        Thanks to the developer community, here's what we've accomplished so far.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i data-lucide="folder-git-2"></i>
+                    </div>
+                    <div class="impact-value">5+</div>
+                    <div class="impact-label">Open Source Projects</div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i data-lucide="download"></i>
+                    </div>
+                    <div class="impact-value">1K+</div>
+                    <div class="impact-label">Total Downloads</div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="impact-value">500+</div>
+                    <div class="impact-label">Developers Helped</div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i data-lucide="star"></i>
+                    </div>
+                    <div class="impact-value">50+</div>
+                    <div class="impact-label">GitHub Stars</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Options -->
+    <section class="section" id="options">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-inner">
+                    <div class="section-label">
+                        <i data-lucide="gift"></i>
+                        Support Tiers
+                    </div>
+                    <h2 class="section-title">Choose Your Support Level</h2>
+                    <p class="section-subtitle">
+                        No matter the amount, every contribution is valued and helps keep the projects running.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="options-grid">
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h3 class="option-name">Starter</h3>
+                    <div class="option-price">Rs. 100 <span>one time</span></div>
+                    <p class="option-desc">A quick boost to start the coding session!</p>
+                    <ul class="option-features">
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            My sincere gratitude
+                        </li>
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Supporter status
+                        </li>
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Good karma
+                        </li>
+                    </ul>
+                    <a href="#scan-pay" class="option-btn">Support Rs. 100</a>
+                </div>
+                
+                <div class="option-card featured">
+                    <span class="option-badge">Most Popular</span>
+                    <div class="option-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="option-name">Supporter</h3>
+                    <div class="option-price">Rs. 500 <span>one time</span></div>
+                    <p class="option-desc">The perfect support for a productive week!</p>
+                    <ul class="option-features">
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Everything in Starter
+                        </li>
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Shoutout on social media
+                        </li>
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Priority bug fixes
+                        </li>
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Direct support access
+                        </li>
+                    </ul>
+                    <a href="#scan-pay" class="option-btn">Support Rs. 500</a>
+                </div>
+                
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="option-name">Champion</h3>
+                    <div class="option-price">Rs. 1000+ <span>one time</span></div>
+                    <p class="option-desc">You're a true champion of open source!</p>
+                    <ul class="option-features">
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Everything in Supporter
+                        </li>
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Name in README credits
+                        </li>
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Feature request priority
+                        </li>
+                        <li class="option-feature">
+                            <i data-lucide="check"></i>
+                            Exclusive updates
+                        </li>
+                    </ul>
+                    <a href="#scan-pay" class="option-btn">Support Rs. 1000+</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Message -->
+    <section class="message-section">
+        <div class="message-container">
+            <div class="message-icon">
+                <i data-lucide="heart"></i>
+            </div>
+            
+            <h2 class="message-title">Thank You for Your Support!</h2>
+            
+            <p class="message-text">
+                Whether you donate, use my projects, share them with others, or simply 
+                star the repositories on GitHub — you're part of this amazing journey. 
+                Your support, encouragement, and feedback mean the world to me. 
+                Together, we're making development more accessible for everyone!
+            </p>
+            
+            <p class="message-nepali">धन्यवाद!</p>
+            
+            <div class="message-signature">
+                <div class="signature-avatar">O</div>
+                <div class="signature-info">
+                    <div class="signature-name">Om Pandey</div>
+                    <div class="signature-role">Full Stack Developer, Nepal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="MainLogo.png" alt="Om Pandey" class="footer-logo">
+                    <span class="footer-brand-text">Om <span>Pandey</span></span>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">
+                        <i data-lucide="file-code"></i>
+                        Documentation
+                    </a>
+                    <a href="https://github.com/ompandey07" target="_blank" class="footer-link">
+                        <i data-lucide="github"></i>
+                        GitHub
+                    </a>
+                    <a href="https://www.omkumarpandey.com.np/" target="_blank" class="footer-link">
+                        <i data-lucide="globe"></i>
+                        Portfolio
+                    </a>
+                    <a href="mailto:admin@omkumarpandey.com.np" class="footer-link">
+                        <i data-lucide="mail"></i>
+                        Contact
+                    </a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://github.com/ompandey07" target="_blank" class="footer-social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/iamompandey/" target="_blank" class="footer-social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://x.com/iam_ompandey" target="_blank" class="footer-social-link" title="Twitter/X">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/ome.exee/" target="_blank" class="footer-social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    © <span id="currentYear"></span> <a href="https://www.omkumarpandey.com.np/" target="_blank">Om Pandey</a>. 
+                    Made with <i class="fas fa-heart footer-heart"></i> in Nepal.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('loaded');
+            }, 2000);
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.reason-card, .impact-card, .option-card, .step-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+    <script src="Base/ConsoleBlock.js"></script>
+</body>
+</html>

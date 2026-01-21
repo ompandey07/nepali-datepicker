@@ -3,6 +3,7 @@
  * Author: Om Pandey
  * Version: 2.3.0
  * Website: https://www.omkumarpandey.com.np/
+ * FIXED: Saturday (शनिबार) is now red as it's Nepal's weekly holiday
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap');
@@ -31,8 +32,9 @@
     --ndp-accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
     --ndp-accent-gradient-hover: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
     
-    --ndp-sunday: #ef4444;
-    --ndp-saturday: #3b82f6;
+    /* ✅ FIXED: Saturday is holiday in Nepal (Red), Sunday is regular (Blue) */
+    --ndp-saturday: #ef4444;
+    --ndp-sunday: #3b82f6;
     --ndp-today: #f59e0b;
     
     --ndp-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -570,8 +572,10 @@
     margin-top: 1px;
 }
 
-.ndp-weekday.ndp-sun .ndp-weekday-nep { color: var(--ndp-sunday); }
+/* ✅ FIXED: Saturday (शनि) is red - Nepal's weekly holiday */
 .ndp-weekday.ndp-sat .ndp-weekday-nep { color: var(--ndp-saturday); }
+/* Sunday (आइत) is blue - regular working day in Nepal */
+.ndp-weekday.ndp-sun .ndp-weekday-nep { color: var(--ndp-sunday); }
 
 /* Days Grid */
 .ndp-days {
@@ -648,8 +652,10 @@
     margin-top: 2px;
 }
 
-.ndp-day.ndp-sun:not(.ndp-selected) .ndp-day-nep { color: var(--ndp-sunday); }
+/* ✅ FIXED: Saturday (शनि) dates are red - Nepal's weekly holiday */
 .ndp-day.ndp-sat:not(.ndp-selected) .ndp-day-nep { color: var(--ndp-saturday); }
+/* Sunday (आइत) dates are blue - regular working day in Nepal */
+.ndp-day.ndp-sun:not(.ndp-selected) .ndp-day-nep { color: var(--ndp-sunday); }
 
 /* ============================================
    Footer
