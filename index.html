@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Nepali Date Picker - Free BS Calendar Library by Om Pandey | JavaScript</title>
+    <meta name="title" content="Nepali Date Picker - Free Bikram Sambat Calendar Library by Om Pandey">
+    <meta name="description" content="A beautiful, modern Nepali (Bikram Sambat) date picker with multiple themes, bilingual support, and complete BS/AD conversion. Zero dependencies, lightweight, and production ready. Developed by Om Pandey, Full Stack Developer from Nepal.">
+    <meta name="keywords" content="Nepali Date Picker, Bikram Sambat, BS Calendar, Nepali Calendar, JavaScript Date Picker, Nepal, BS to AD Converter, AD to BS Converter, Nepali Datepicker JS, Om Pandey, omkumarpandey, nepali miti picker, नेपाली मिति पिकर, free nepali calendar, date picker library, vanilla javascript, nepali date converter, bikram sambat calendar javascript, nepal calendar picker, miti picker nepal">
+    <meta name="author" content="Om Pandey">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="copyright" content="Om Pandey">
+    <meta name="category" content="Software, Developer Tools, JavaScript Library">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nepalidate.omkumarpandey.com.np/">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nepalidate.omkumarpandey.com.np/">
+    <meta property="og:site_name" content="Nepali Date Picker by Om Pandey">
+    <meta property="og:title" content="Nepali Date Picker - Free Bikram Sambat Calendar Library">
+    <meta property="og:description" content="A beautiful, modern Nepali (Bikram Sambat) date picker with multiple themes, bilingual support, and complete BS/AD conversion. Zero dependencies, lightweight, and production ready. Created by Om Pandey.">
+    <meta property="og:image" content="https://nepalidate.omkumarpandey.com.np/MainLogo.png">
+    <meta property="og:image:secure_url" content="https://nepalidate.omkumarpandey.com.np/MainLogo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Nepali Date Picker - Bikram Sambat Calendar by Om Pandey">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ne_NP">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://nepalidate.omkumarpandey.com.np/">
+    <meta name="twitter:title" content="Nepali Date Picker - Free Bikram Sambat Calendar Library">
+    <meta name="twitter:description" content="A beautiful Nepali (Bikram Sambat) date picker with multiple themes, bilingual support, and BS/AD conversion. Zero dependencies & lightweight. By Om Pandey.">
+    <meta name="twitter:image" content="https://nepalidate.omkumarpandey.com.np/MainLogo.png">
+    <meta name="twitter:image:alt" content="Nepali Date Picker by Om Pandey">
+    <meta name="twitter:creator" content="@iam_ompandey">
+    <meta name="twitter:site" content="@iam_ompandey">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="msapplication-TileImage" content="https://nepalidate.omkumarpandey.com.np/MainLogo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Nepali Date Picker">
+    <meta name="application-name" content="Nepali Date Picker">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Geo Meta Tags -->
+    <meta name="geo.region" content="NP-BA">
+    <meta name="geo.placename" content="Kathmandu, Nepal">
+    <meta name="geo.position" content="27.7172;85.3240">
+    <meta name="ICBM" content="27.7172, 85.3240">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="MainLogo.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="MainLogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="MainLogo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="MainLogo.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://github.com">
+    
+    <!-- Structured Data / Schema.org JSON-LD - Software Application -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Nepali Date Picker",
+      "alternateName": ["नेपाली मिति पिकर", "BS Date Picker", "Bikram Sambat Calendar"],
+      "description": "A beautiful, modern Nepali (Bikram Sambat) date picker with multiple themes, bilingual support, and complete BS/AD conversion. Zero dependencies, lightweight, and production ready.",
+      "url": "https://ompandey07.github.io/nepali-datepicker/",
+      "downloadUrl": "https://github.com/ompandey07/nepali-datepicker",
+      "installUrl": "https://cdn.jsdelivr.net/gh/ompandey07/nepali-datepicker@main/dist/",
+      "softwareVersion": "1.0.0",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "JavaScript Library",
+      "operatingSystem": "Web Browser",
+      "releaseNotes": "Initial release with 5 themes, bilingual support, and BS/AD conversion",
+      "featureList": [
+        "Multiple Themes (Default, Ocean, Forest, Sunset, Rose)",
+        "Dark Mode Support",
+        "Bilingual Support (Nepali & English)",
+        "BS to AD Date Conversion",
+        "AD to BS Date Conversion",
+        "Nepali Numerals Support",
+        "Zero Dependencies",
+        "Lightweight & Fast",
+        "Keyboard Navigation",
+        "Mobile Responsive"
+      ],
+      "screenshot": "https://ompandey07.github.io/nepali-datepicker/MainLogo.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Om Pandey",
+        "url": "https://www.omkumarpandey.com.np",
+        "sameAs": [
+          "https://github.com/ompandey07",
+          "https://www.linkedin.com/in/iamompandey/",
+          "https://x.com/iam_ompandey"
+        ]
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Om Pandey",
+        "url": "https://www.omkumarpandey.com.np"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Om Pandey",
+        "url": "https://www.omkumarpandey.com.np"
+      },
+      "maintainer": {
+        "@type": "Person",
+        "name": "Om Pandey",
+        "url": "https://www.omkumarpandey.com.np"
+      },
+      "license": "https://opensource.org/licenses/MIT",
+      "isAccessibleForFree": true,
+      "programmingLanguage": ["JavaScript", "CSS", "HTML"],
+      "runtimePlatform": "Browser",
+      "keywords": "Nepali Date Picker, Bikram Sambat, BS Calendar, JavaScript, Date Picker, Nepal, BS to AD, AD to BS",
+      "image": "https://ompandey07.github.io/nepali-datepicker/MainLogo.png",
+      "datePublished": "2024-01-01",
+      "dateModified": "2024-12-01"
+    }
+    </script>
+
+    <!-- Structured Data - Person (Developer) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Om Pandey",
+      "alternateName": "omkumarpandey",
+      "url": "https://www.omkumarpandey.com.np",
+      "image": "https://www.omkumarpandey.com.np/Profile.jpg",
+      "sameAs": [
+        "https://www.instagram.com/ome.exee/",
+        "https://www.linkedin.com/in/iamompandey/",
+        "https://github.com/ompandey07",
+        "https://x.com/iam_ompandey",
+        "https://www.reddit.com/user/Silver-Boss-7309/"
+      ],
+      "jobTitle": "Full Stack Developer",
+      "description": "Experienced full stack developer with 5+ years of expertise in building scalable web applications using React, Django, Python, and Node.js. Creator of Nepali Date Picker.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kalanki",
+        "addressLocality": "Kathmandu",
+        "addressRegion": "Bagmati Province",
+        "addressCountry": "NP"
+      },
+      "email": "admin@omkumarpandey.com.np",
+      "telephone": "+977-9863588895",
+      "knowsAbout": [
+        "Web Development",
+        "Full Stack Development",
+        "JavaScript",
+        "React",
+        "Django",
+        "Python",
+        "Node.js",
+        "Nepali Date Picker",
+        "Open Source Development"
+      ],
+      "nationality": {
+        "@type": "Country",
+        "name": "Nepal"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - WebPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Nepali Date Picker - Documentation & Demo",
+      "description": "Official documentation and live demo page for Nepali Date Picker - A free, open-source Bikram Sambat calendar library for JavaScript developers.",
+      "url": "https://ompandey07.github.io/nepali-datepicker/",
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "Nepali Date Picker"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Om Pandey",
+        "url": "https://www.omkumarpandey.com.np"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Om Pandey"
+      },
+      "inLanguage": ["en-US", "ne-NP"],
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Nepali Date Picker",
+        "url": "https://ompandey07.github.io/nepali-datepicker/",
+        "publisher": {
+          "@type": "Person",
+          "name": "Om Pandey"
+        }
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Nepali Date Picker JavaScript Library"
+      },
+      "copyrightYear": "2024",
+      "copyrightHolder": {
+        "@type": "Person",
+        "name": "Om Pandey"
+      },
+      "datePublished": "2024-01-01",
+      "dateModified": "2024-12-01",
+      "keywords": "Nepali Date Picker, Bikram Sambat, JavaScript, Open Source, Nepal"
+    }
+    </script>
+
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Nepali Date Picker",
+      "alternateName": "नेपाली मिति पिकर",
+      "url": "https://ompandey07.github.io/nepali-datepicker/",
+      "description": "Official website for Nepali Date Picker - A free Bikram Sambat calendar library by Om Pandey",
+      "author": {
+        "@type": "Person",
+        "name": "Om Pandey",
+        "url": "https://www.omkumarpandey.com.np"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Om Pandey"
+      },
+      "inLanguage": ["en-US", "ne-NP"],
+      "copyrightYear": "2024",
+      "copyrightHolder": {
+        "@type": "Person",
+        "name": "Om Pandey"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ompandey07.github.io/nepali-datepicker/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ompandey07.github.io/nepali-datepicker/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Features",
+          "item": "https://ompandey07.github.io/nepali-datepicker/#features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Installation",
+          "item": "https://ompandey07.github.io/nepali-datepicker/#installation"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Live Demos",
+          "item": "https://ompandey07.github.io/nepali-datepicker/#demos"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Configuration",
+          "item": "https://ompandey07.github.io/nepali-datepicker/#options"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "API Methods",
+          "item": "https://ompandey07.github.io/nepali-datepicker/#api"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Nepali Date Picker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nepali Date Picker is a free, open-source JavaScript library for adding Bikram Sambat (BS) calendar functionality to web applications. It supports multiple themes, bilingual display, and accurate BS/AD date conversion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who developed Nepali Date Picker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nepali Date Picker was developed by Om Pandey, a Full Stack Developer from Kathmandu, Nepal with 5+ years of experience in web development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Nepali Date Picker free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Nepali Date Picker is completely free and open-source under the MIT license. You can use it in personal and commercial projects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What date range does Nepali Date Picker support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nepali Date Picker includes accurate BS calendar data from 2070 BS to 2099 BS, covering approximately 30 years of date conversion support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Nepali Date Picker require jQuery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, Nepali Date Picker is built with vanilla JavaScript and has zero dependencies. It works without jQuery or any other library."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - HowTo -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Install Nepali Date Picker",
+      "description": "Step-by-step guide to install and use Nepali Date Picker in your web project",
+      "author": {
+        "@type": "Person",
+        "name": "Om Pandey"
+      },
+      "totalTime": "PT5M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Web Browser"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Text Editor"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Include CSS",
+          "text": "Add the Nepali Date Picker CSS file from CDN to your HTML head section",
+          "url": "https://ompandey07.github.io/nepali-datepicker/#installation"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Add Container",
+          "text": "Create a div element with an ID where the date picker will be rendered",
+          "url": "https://ompandey07.github.io/nepali-datepicker/#installation"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Include JavaScript",
+          "text": "Add the Nepali Date Picker JavaScript file from CDN before closing body tag",
+          "url": "https://ompandey07.github.io/nepali-datepicker/#installation"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Initialize",
+          "text": "Call NepaliDatePicker.init() with your container selector and options",
+          "url": "https://ompandey07.github.io/nepali-datepicker/#installation"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Lucide Icons for UI -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Nepali Date Picker -->
+    <link rel="stylesheet" href="/dist/nepali-datepicker.css">
+    
+    <link rel="stylesheet" href="Base/style.css">   
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Left Side - Logo & Info -->
+            <div class="hero-left">
+                <img src="MainLogo.png" alt="Nepali Date Picker Logo - Bikram Sambat Calendar by Om Pandey" class="hero-logo">
+                
+                <div class="hero-badges">
+                    <span class="hero-badge badge-version">
+                        <i class="fas fa-code-branch"></i>
+                        v1.0.0
+                    </span>
+                    <span class="hero-badge badge-license">
+                        <i class="fas fa-scale-balanced"></i>
+                        MIT
+                    </span>
+                    <a href="https://cdn.jsdelivr.net/gh/ompandey07/nepali-datepicker@main/dist/" target="_blank" rel="noopener noreferrer" class="hero-badge badge-cdn">
+                        <i class="fas fa-cloud"></i>
+                        CDN
+                    </a>
+                    <span class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        Production Ready
+                    </span>
+                </div>
+                
+                <h1 class="hero-title">नेपाली मिति पिकर</h1>
+                
+                <p class="hero-description">
+                    A beautiful, modern Nepali (Bikram Sambat) date picker with multiple themes, 
+                    bilingual support, and complete BS/AD conversion. Zero dependencies, lightweight, 
+                    and ready for production.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#installation" class="hero-btn hero-btn-primary">
+                        <i data-lucide="download"></i>
+                        Get Started
+                    </a>
+                    <a href="https://github.com/ompandey07/nepali-datepicker" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-secondary">
+                        <i data-lucide="github"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Side - Try It Now -->
+            <div class="hero-right">
+                <div class="try-it-header">
+                    <div class="try-it-icon">
+                        <i data-lucide="calendar-days"></i>
+                    </div>
+                    <span class="try-it-title">Try It Now</span>
+                </div>
+                
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <div class="demo-label">
+                            <i data-lucide="sun"></i>
+                            Light Theme
+                        </div>
+                        <div id="hero-light"></div>
+                    </div>
+                    <div class="demo-item dark">
+                        <div class="demo-label">
+                            <i data-lucide="moon"></i>
+                            Dark Theme
+                        </div>
+                        <div id="hero-dark"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav" aria-label="Main Navigation">
+        <a href="#features" class="nav-link">
+            <i data-lucide="sparkles"></i>
+            <span>Features</span>
+        </a>
+        <a href="#installation" class="nav-link">
+            <i data-lucide="download"></i>
+            <span>Install</span>
+        </a>
+        <a href="#demos" class="nav-link">
+            <i data-lucide="layout-grid"></i>
+            <span>Demos</span>
+        </a>
+        <a href="#options" class="nav-link">
+            <i data-lucide="settings"></i>
+            <span>Options</span>
+        </a>
+        <a href="#api" class="nav-link">
+            <i data-lucide="code-2"></i>
+            <span>API</span>
+        </a>
+        <a href="https://github.com/ompandey07/nepali-datepicker" target="_blank" rel="noopener noreferrer" class="nav-link">
+            <i data-lucide="github"></i>
+            <span>GitHub</span>
+        </a>
+    </nav>
+
+    <!-- Features Section -->
+    <section class="section section-alt" id="features" aria-labelledby="features-heading">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i data-lucide="sparkles"></i>
+                </div>
+                <h2 class="section-title" id="features-heading">Features</h2>
+                <p class="section-subtitle">Everything you need for Nepali date picking</p>
+            </div>
+            
+            <div class="features-table">
+                <!-- Design & Themes Column -->
+                <div class="features-column">
+                    <div class="features-column-header">
+                        <i class="fas fa-palette fa-icon"></i>
+                        <h3>Design & Themes</h3>
+                    </div>
+                    <div class="features-list">
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Lightning Fast</div>
+                                <div class="feature-desc">Instant rendering with optimized performance</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-swatchbook"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">5 Beautiful Themes</div>
+                                <div class="feature-desc">Default, Ocean, Forest, Sunset, and Rose</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Dark Mode</div>
+                                <div class="feature-desc">Built-in dark mode support with smooth transitions</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-mobile-screen"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Fully Responsive</div>
+                                <div class="feature-desc">Works perfectly on all devices and screen sizes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Localization Column -->
+                <div class="features-column">
+                    <div class="features-column-header">
+                        <i class="fas fa-globe fa-icon"></i>
+                        <h3>Localization</h3>
+                    </div>
+                    <div class="features-list">
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-earth-asia"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Bilingual Support</div>
+                                <div class="feature-desc">Nepali, English, or both languages together</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-right-left"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">BS ⇔ AD Conversion</div>
+                                <div class="feature-desc">Accurate conversion from 2070 to 2099 BS</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-hashtag"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Nepali Numerals</div>
+                                <div class="feature-desc">Full Devanagari number support (०-९)</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-calendar-week"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Month & Year Picker</div>
+                                <div class="feature-desc">Quick navigation with grid selectors</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Column -->
+                <div class="features-column">
+                    <div class="features-column-header">
+                        <i class="fas fa-code fa-icon"></i>
+                        <h3>Technical</h3>
+                    </div>
+                    <div class="features-list">
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-feather"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Zero Dependencies</div>
+                                <div class="feature-desc">Pure vanilla JavaScript, no jQuery needed</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Lightweight</div>
+                                <div class="feature-desc">Minimal bundle size for fast loading</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Easy Integration</div>
+                                <div class="feature-desc">Simple API with intuitive methods</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">CDN Ready</div>
+                                <div class="feature-desc">Use instantly via jsDelivr CDN</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- User Experience Column -->
+                <div class="features-column">
+                    <div class="features-column-header">
+                        <i class="fas fa-heart fa-icon"></i>
+                        <h3>User Experience</h3>
+                    </div>
+                    <div class="features-list">
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-arrows-up-down-left-right"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Smart Positioning</div>
+                                <div class="feature-desc">Auto-adjusts to viewport boundaries</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-keyboard"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Keyboard Friendly</div>
+                                <div class="feature-desc">Full keyboard navigation support</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-universal-access"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Accessible</div>
+                                <div class="feature-desc">ARIA compliant for screen readers</div>
+                            </div>
+                        </div>
+                        <div class="feature-row">
+                            <div class="feature-icon-box">
+                                <i class="fas fa-sliders"></i>
+                            </div>
+                            <div class="feature-content">
+                                <div class="feature-name">Customizable</div>
+                                <div class="feature-desc">Extensive options and callbacks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="section" id="installation" aria-labelledby="installation-heading">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i data-lucide="download"></i>
+                </div>
+                <h2 class="section-title" id="installation-heading">Installation</h2>
+                <p class="section-subtitle">Choose your preferred installation method</p>
+            </div>
+            
+            <!-- Installation Tabs -->
+            <div class="install-tabs" role="tablist">
+                <button class="install-tab active" onclick="showInstallTab('cdn')" role="tab" aria-selected="true" aria-controls="install-cdn">
+                    <i data-lucide="cloud"></i>
+                    CDN (jsDelivr)
+                </button>
+                <button class="install-tab" onclick="showInstallTab('local')" role="tab" aria-selected="false" aria-controls="install-local">
+                    <i data-lucide="folder"></i>
+                    Local Files
+                </button>
+                <button class="install-tab" onclick="showInstallTab('npm')" role="tab" aria-selected="false" aria-controls="install-npm">
+                    <i data-lucide="package"></i>
+                    npm (Coming Soon)
+                </button>
+            </div>
+            
+            <!-- CDN Installation -->
+            <div id="install-cdn" class="install-content active" role="tabpanel">
+                <div class="code-block no-top-radius">
+                    <div class="code-header">
+                        <div class="code-header-left">
+                            <div class="code-dots">
+                                <span class="code-dot code-dot-red"></span>
+                                <span class="code-dot code-dot-yellow"></span>
+                                <span class="code-dot code-dot-green"></span>
+                            </div>
+                            <span class="code-title">index.html (CDN)</span>
+                        </div>
+                        <button class="code-copy" onclick="copyCode(this)" aria-label="Copy code">
+                            <i data-lucide="copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="code-content">
+<pre><span class="comment">&lt;!-- 1. Include CSS from CDN --&gt;</span>
+<span class="keyword">&lt;link</span> <span class="property">rel</span>=<span class="string">"stylesheet"</span> 
+      <span class="property">href</span>=<span class="string">"https://cdn.jsdelivr.net/gh/ompandey07/nepali-datepicker@main/dist/nepali-datepicker.css"</span><span class="keyword">&gt;</span>
+
+<span class="comment">&lt;!-- 2. Add container --&gt;</span>
+<span class="keyword">&lt;div</span> <span class="property">id</span>=<span class="string">"myDatePicker"</span><span class="keyword">&gt;&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- 3. Include JS from CDN --&gt;</span>
+<span class="keyword">&lt;script</span> <span class="property">src</span>=<span class="string">"https://cdn.jsdelivr.net/gh/ompandey07/nepali-datepicker@main/dist/nepali-datepicker.js"</span><span class="keyword">&gt;&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- 4. Initialize --&gt;</span>
+<span class="keyword">&lt;script&gt;</span>
+  <span class="function">NepaliDatePicker</span>.<span class="function">init</span>(<span class="string">'#myDatePicker'</span>, {
+    <span class="property">mode</span>: <span class="string">'bilingual'</span>,
+    <span class="property">theme</span>: <span class="string">'default'</span>,
+    <span class="property">onChange</span>: <span class="keyword">function</span>(date) {
+      console.<span class="function">log</span>(<span class="string">'Selected:'</span>, date);
+    }
+  });
+<span class="keyword">&lt;/script&gt;</span></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Local Installation -->
+            <div id="install-local" class="install-content" role="tabpanel">
+                <div class="code-block no-top-radius">
+                    <div class="code-header">
+                        <div class="code-header-left">
+                            <div class="code-dots">
+                                <span class="code-dot code-dot-red"></span>
+                                <span class="code-dot code-dot-yellow"></span>
+                                <span class="code-dot code-dot-green"></span>
+                            </div>
+                            <span class="code-title">index.html (Local Files)</span>
+                        </div>
+                        <button class="code-copy" onclick="copyCode(this)" aria-label="Copy code">
+                            <i data-lucide="copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="code-content">
+<pre><span class="comment">&lt;!-- 1. Download files from GitHub and include CSS --&gt;</span>
+<span class="keyword">&lt;link</span> <span class="property">rel</span>=<span class="string">"stylesheet"</span> <span class="property">href</span>=<span class="string">"dist/nepali-datepicker.css"</span><span class="keyword">&gt;</span>
+
+<span class="comment">&lt;!-- 2. Add container --&gt;</span>
+<span class="keyword">&lt;div</span> <span class="property">id</span>=<span class="string">"datepicker"</span><span class="keyword">&gt;&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- 3. Include JS --&gt;</span>
+<span class="keyword">&lt;script</span> <span class="property">src</span>=<span class="string">"dist/nepali-datepicker.js"</span><span class="keyword">&gt;&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- 4. Initialize --&gt;</span>
+<span class="keyword">&lt;script&gt;</span>
+  <span class="function">NepaliDatePicker</span>.<span class="function">init</span>(<span class="string">'#datepicker'</span>, {
+    <span class="property">mode</span>: <span class="string">'bilingual'</span>,
+    <span class="property">theme</span>: <span class="string">'ocean'</span>
+  });
+<span class="keyword">&lt;/script&gt;</span></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- npm Installation -->
+            <div id="install-npm" class="install-content" role="tabpanel">
+                <div class="code-block no-top-radius">
+                    <div class="code-header">
+                        <div class="code-header-left">
+                            <div class="code-dots">
+                                <span class="code-dot code-dot-red"></span>
+                                <span class="code-dot code-dot-yellow"></span>
+                                <span class="code-dot code-dot-green"></span>
+                            </div>
+                            <span class="code-title">npm (Coming Soon)</span>
+                        </div>
+                    </div>
+                    <div class="code-content">
+<pre><span class="comment"># npm package coming soon!</span>
+npm install nepali-datepicker
+
+<span class="comment"># For now, please use CDN or download files from GitHub</span>
+<span class="comment"># https://github.com/ompandey07/nepali-datepicker</span></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info" role="alert">
+                <i data-lucide="lightbulb" class="alert-icon"></i>
+                <div class="alert-content">
+                    <div class="alert-title">Pro Tip</div>
+                    <div class="alert-text">Click on the month/year in the header to quickly jump to any month or year! The date picker also supports full keyboard navigation.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demos Section -->
+    <section class="section section-alt" id="demos" aria-labelledby="demos-heading">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i data-lucide="layout-grid"></i>
+                </div>
+                <h2 class="section-title" id="demos-heading">Live Demos</h2>
+                <p class="section-subtitle">Explore all themes and modes</p>
+            </div>
+            
+            <!-- Modes Showcase -->
+            <div class="showcase-box" style="margin-bottom: 24px;">
+                <div class="showcase-header">
+                    <div class="showcase-icon">
+                        <i data-lucide="languages"></i>
+                    </div>
+                    <span class="showcase-title">Display Modes</span>
+                </div>
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <div class="showcase-label">
+                            <i data-lucide="globe"></i>
+                            Bilingual (Both)
+                        </div>
+                        <div id="demo-bilingual"></div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-label">
+                            <i data-lucide="type"></i>
+                            Nepali Only
+                        </div>
+                        <div id="demo-nepali"></div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-label">
+                            <i data-lucide="a-large-small"></i>
+                            English Only
+                        </div>
+                        <div id="demo-english"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dark Mode Showcase -->
+            <div class="showcase-box" style="margin-bottom: 24px;">
+                <div class="showcase-header">
+                    <div class="showcase-icon">
+                        <i data-lucide="moon-star"></i>
+                    </div>
+                    <span class="showcase-title">Dark Mode</span>
+                </div>
+                <div class="showcase-grid">
+                    <div class="showcase-item dark">
+                        <div class="showcase-label">
+                            <i data-lucide="moon"></i>
+                            Dark Bilingual
+                        </div>
+                        <div id="demo-dark-bilingual"></div>
+                    </div>
+                    <div class="showcase-item dark">
+                        <div class="showcase-label">
+                            <i data-lucide="type"></i>
+                            Dark Nepali
+                        </div>
+                        <div id="demo-dark-nepali"></div>
+                    </div>
+                    <div class="showcase-item dark">
+                        <div class="showcase-label">
+                            <i data-lucide="a-large-small"></i>
+                            Dark English
+                        </div>
+                        <div id="demo-dark-english"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Color Themes Showcase -->
+            <div class="showcase-box">
+                <div class="showcase-header">
+                    <div class="showcase-icon">
+                        <i data-lucide="palette"></i>
+                    </div>
+                    <span class="showcase-title">Color Themes</span>
+                </div>
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <div class="showcase-label ocean">
+                            <i data-lucide="waves"></i>
+                            Ocean Theme
+                        </div>
+                        <div id="demo-ocean"></div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-label forest">
+                            <i data-lucide="trees"></i>
+                            Forest Theme
+                        </div>
+                        <div id="demo-forest"></div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-label sunset">
+                            <i data-lucide="sunset"></i>
+                            Sunset Theme
+                        </div>
+                        <div id="demo-sunset"></div>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-label rose">
+                            <i data-lucide="flower-2"></i>
+                            Rose Theme
+                        </div>
+                        <div id="demo-rose"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Options Section -->
+    <section class="section" id="options" aria-labelledby="options-heading">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i data-lucide="settings"></i>
+                </div>
+                <h2 class="section-title" id="options-heading">Configuration</h2>
+                <p class="section-subtitle">All available options</p>
+            </div>
+            
+            <div class="table-wrapper">
+                <table class="options-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Option</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Default</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="option-name">mode</span></td>
+                            <td><span class="option-type">String</span></td>
+                            <td><span class="option-default">'bilingual'</span></td>
+                            <td>'bilingual', 'nepali', or 'english'</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">theme</span></td>
+                            <td><span class="option-type">String</span></td>
+                            <td><span class="option-default">'default'</span></td>
+                            <td>'default', 'ocean', 'forest', 'sunset', 'rose'</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">dark</span></td>
+                            <td><span class="option-type">Boolean</span></td>
+                            <td><span class="option-default">false</span></td>
+                            <td>Enable dark mode</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">minYear</span></td>
+                            <td><span class="option-type">Number</span></td>
+                            <td><span class="option-default">2070</span></td>
+                            <td>Minimum BS year</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">maxYear</span></td>
+                            <td><span class="option-type">Number</span></td>
+                            <td><span class="option-default">2099</span></td>
+                            <td>Maximum BS year</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">closeOnSelect</span></td>
+                            <td><span class="option-type">Boolean</span></td>
+                            <td><span class="option-default">true</span></td>
+                            <td>Close after selection</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">showToday</span></td>
+                            <td><span class="option-type">Boolean</span></td>
+                            <td><span class="option-default">true</span></td>
+                            <td>Show Today button</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">showClear</span></td>
+                            <td><span class="option-type">Boolean</span></td>
+                            <td><span class="option-default">true</span></td>
+                            <td>Show Clear button</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">showClose</span></td>
+                            <td><span class="option-type">Boolean</span></td>
+                            <td><span class="option-default">true</span></td>
+                            <td>Show Close button</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">showDisplay</span></td>
+                            <td><span class="option-type">Boolean</span></td>
+                            <td><span class="option-default">true</span></td>
+                            <td>Show selected date display below</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">placeholder</span></td>
+                            <td><span class="option-type">String</span></td>
+                            <td><span class="option-default">'मिति छान्नुहोस्'</span></td>
+                            <td>Input placeholder (Nepali)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">placeholderEn</span></td>
+                            <td><span class="option-type">String</span></td>
+                            <td><span class="option-default">'Select Date'</span></td>
+                            <td>Input placeholder (English)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">onChange</span></td>
+                            <td><span class="option-type">Function</span></td>
+                            <td><span class="option-default">null</span></td>
+                            <td>Callback on date select</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">onOpen</span></td>
+                            <td><span class="option-type">Function</span></td>
+                            <td><span class="option-default">null</span></td>
+                            <td>Callback on calendar open</td>
+                        </tr>
+                        <tr>
+                            <td><span class="option-name">onClose</span></td>
+                            <td><span class="option-type">Function</span></td>
+                            <td><span class="option-default">null</span></td>
+                            <td>Callback on calendar close</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section class="section section-alt" id="api" aria-labelledby="api-heading">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i data-lucide="code-2"></i>
+                </div>
+                <h2 class="section-title" id="api-heading">API Methods</h2>
+                <p class="section-subtitle">Programmatic control</p>
+            </div>
+            
+            <div class="code-block">
+                <div class="code-header">
+                    <div class="code-header-left">
+                        <div class="code-dots">
+                            <span class="code-dot code-dot-red"></span>
+                            <span class="code-dot code-dot-yellow"></span>
+                            <span class="code-dot code-dot-green"></span>
+                        </div>
+                        <span class="code-title">api.js</span>
+                    </div>
+                    <button class="code-copy" onclick="copyCode(this)" aria-label="Copy code">
+                        <i data-lucide="copy"></i>
+                        Copy
+                    </button>
+                </div>
+                <div class="code-content">
+<pre><span class="comment">// Initialize</span>
+<span class="keyword">const</span> picker = <span class="function">NepaliDatePicker</span>.<span class="function">init</span>(<span class="string">'#picker'</span>, opts);
+
+<span class="comment">// Get selected date</span>
+picker.<span class="function">getDate</span>();  <span class="comment">// Returns: { bs: {...}, ad: {...}, formatted: '...' }</span>
+
+<span class="comment">// Set date programmatically</span>
+picker.<span class="function">setDate</span>(<span class="string">2081</span>, <span class="string">5</span>, <span class="string">15</span>);
+
+<span class="comment">// Open / Close / Toggle calendar</span>
+picker.<span class="function">open</span>();
+picker.<span class="function">close</span>();
+picker.<span class="function">toggle</span>();
+
+<span class="comment">// Clear selection</span>
+picker.<span class="function">clear</span>();
+
+<span class="comment">// Change theme dynamically</span>
+picker.<span class="function">setTheme</span>(<span class="string">'ocean'</span>);
+picker.<span class="function">setDark</span>(<span class="keyword">true</span>);
+
+<span class="comment">// Destroy instance</span>
+picker.<span class="function">destroy</span>();
+
+<span class="comment">// ========== Utility Functions ==========</span>
+
+<span class="comment">// Convert BS to AD</span>
+<span class="function">NepaliDatePicker</span>.utils.<span class="function">bsToAd</span>(<span class="string">2081</span>, <span class="string">5</span>, <span class="string">15</span>);
+<span class="comment">// Returns: { year: 2024, month: 8, day: 30, dow: 5 }</span>
+
+<span class="comment">// Convert AD to BS</span>
+<span class="function">NepaliDatePicker</span>.utils.<span class="function">adToBs</span>(<span class="string">2024</span>, <span class="string">8</span>, <span class="string">30</span>);
+<span class="comment">// Returns: { year: 2081, month: 5, day: 15 }</span>
+
+<span class="comment">// Convert to Nepali numerals</span>
+<span class="function">NepaliDatePicker</span>.utils.<span class="function">toNepali</span>(<span class="string">2081</span>);  <span class="comment">// Returns: '२०८१'</span>
+
+<span class="comment">// Get today's BS date</span>
+<span class="function">NepaliDatePicker</span>.utils.<span class="function">getToday</span>();
+<span class="comment">// Returns: { year: 2081, month: 5, day: 15 }</span></pre>
+                </div>
+            </div>
+            
+            <div class="alert alert-warning" role="alert">
+                <i data-lucide="alert-triangle" class="alert-icon"></i>
+                <div class="alert-content">
+                    <div class="alert-title">Calendar Data Range</div>
+                    <div class="alert-text">Accurate BS data included from <code>2070</code> to <code>2099</code>. Dates outside this range may not convert correctly. The date picker uses Google Fonts (Noto Sans Devanagari) - ensure internet connectivity for proper font rendering.</div>
+                </div>
+            </div>
+            
+            <!-- Browser Support -->
+            <div style="margin-top: 48px;">
+                <h3 style="text-align: center; font-family: var(--font-heading); font-size: 20px; font-weight: 700; margin-bottom: 8px;">Browser Support</h3>
+                <p style="text-align: center; font-family: var(--font-serif); font-style: italic; color: var(--text-secondary); margin-bottom: 24px;">Works on all modern browsers</p>
+                
+                <div class="browser-grid">
+                    <div class="browser-item">
+                        <i class="fab fa-chrome browser-icon" aria-hidden="true"></i>
+                        <span class="browser-name">Chrome</span>
+                        <span class="browser-status supported">✓ Latest</span>
+                    </div>
+                    <div class="browser-item">
+                        <i class="fab fa-firefox-browser browser-icon" aria-hidden="true"></i>
+                        <span class="browser-name">Firefox</span>
+                        <span class="browser-status supported">✓ Latest</span>
+                    </div>
+                    <div class="browser-item">
+                        <i class="fab fa-safari browser-icon" aria-hidden="true"></i>
+                        <span class="browser-name">Safari</span>
+                        <span class="browser-status supported">✓ Latest</span>
+                    </div>
+                    <div class="browser-item">
+                        <i class="fab fa-edge browser-icon" aria-hidden="true"></i>
+                        <span class="browser-name">Edge</span>
+                        <span class="browser-status supported">✓ Latest</span>
+                    </div>
+                    <div class="browser-item">
+                        <i class="fab fa-opera browser-icon" aria-hidden="true"></i>
+                        <span class="browser-name">Opera</span>
+                        <span class="browser-status supported">✓ Latest</span>
+                    </div>
+                    <div class="browser-item">
+                        <i class="fab fa-internet-explorer browser-icon" aria-hidden="true"></i>
+                        <span class="browser-name">IE 11</span>
+                        <span class="browser-status partial">⚠ Polyfills</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <img src="MainLogo.png" alt="Nepali Date Picker Logo" class="footer-logo">
+        <p class="footer-text">A premium Nepali date picker for modern web applications</p>
+        
+        <a href="https://www.omkumarpandey.com.np/" target="_blank" rel="noopener noreferrer" class="footer-author">
+            <i class="fas fa-heart" aria-hidden="true"></i>
+            Made with Love by Om Pandey
+        </a>
+        
+        <div class="footer-links">
+            <a href="https://github.com/ompandey07/nepali-datepicker" target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                GitHub
+            </a>
+            <a href="https://www.omkumarpandey.com.np/" target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fas fa-globe" aria-hidden="true"></i>
+                Website
+            </a>
+            <a href="https://github.com/ompandey07/nepali-datepicker/issues" target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fas fa-comments" aria-hidden="true"></i>
+                Support
+            </a>
+        </div>
+        
+        <div class="footer-star">
+            <p class="footer-star-text">
+                <i class="fas fa-star" aria-hidden="true"></i>
+                Star this repo if you find it helpful!
+            </p>
+        </div>
+        
+       <p style="margin-top: 24px; font-size: 12px; color: #666;">
+          © <span id="currentYear"></span> Om Pandey. All rights reserved. |
+          <a href="https://www.omkumarpandey.com.np/" target="_blank" rel="noopener noreferrer" style="color: #6366f1;">
+            omkumarpandey.com.np
+          </a>
+        </p>
+
+        <script>
+          /* ================================================
+             SET CURRENT YEAR AUTOMATICALLY
+             ================================================ */
+          document.getElementById("currentYear").textContent = new Date().getFullYear();
+        </script>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/dist/nepali-datepicker.js"></script>
+    <script src="Base/app.js"></script>
+    <script src="Base/ConsoleBlock.js"></script>
+
+
+</body>
+</html>

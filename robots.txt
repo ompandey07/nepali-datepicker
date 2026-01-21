@@ -1,0 +1,35 @@
+# Robots.txt for Nepali Date Picker
+# https://nepalidate.omkumarpandey.com.np/
+# Developer: Om Pandey
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nepalidate.omkumarpandey.com.np/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 10
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yahoo! Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block unnecessary files (optional)
+Disallow: /*.json$
+Disallow: /Base/
