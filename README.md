@@ -1,22 +1,67 @@
-# नेपाली मिति पिकर (Nepali Date Picker)
+<div align="center">
 
-![Version](https://img.shields.io/badge/version-2.3.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+# 🗓️ नेपाली मिति पिकर (Nepali Date Picker)
 
-A beautiful, modern Nepali (Bikram Sambat) date picker with multiple themes, bilingual support, and complete BS/AD conversion.
+![Nepali Date Picker Logo](Logo.png)
 
-![Nepali Date Picker Preview](https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Nepali+Date+Picker+Preview)
+[![Version](https://img.shields.io/badge/version-2.3.0-blue.svg)](https://github.com/ompandey07/nepali-datepicker)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange.svg)](https://cdn.jsdelivr.net/gh/ompandey07/nepali-datepicker@main/dist/)
+
+**A beautiful, modern Nepali (Bikram Sambat) date picker with multiple themes, bilingual support, and complete BS/AD conversion.**
+
+[Demo](https://ompandey07.github.io/nepali-datepicker) • [Documentation](#-installation) • [Examples](#-examples) • [API](#-api-methods)
+
+</div>
+
+---
 
 ## ✨ Features
 
-- 🎨 **5 Beautiful Themes** - Default purple, ocean blue, forest green, sunset orange, and rose pink
-- 🌙 **Dark Mode** - Built-in dark mode with carefully crafted colors
-- 🌏 **Bilingual Support** - Nepali only, English only, or bilingual mode
-- 📅 **Month & Year Picker** - Quick jump to any month or year with grid selectors
-- 🔄 **BS ⇔ AD Conversion** - Accurate conversion from 2070 to 2099 BS
-- ⚡ **Zero Dependencies** - Lightweight vanilla JS. No jQuery needed
-- 📱 **Responsive** - Works perfectly on all devices
-- 🎯 **Easy to Use** - Simple initialization and configuration
+<table>
+<tr>
+<td width="50%">
+
+### 🎨 Design & Themes
+- ⚡ **Lightning Fast** - Complete site audit in under 30 seconds
+- 🎨 **5 Beautiful Themes** - Default, Ocean, Forest, Sunset, and Rose
+- 🌙 **Dark Mode** - Built-in dark mode support
+- 📱 **Fully Responsive** - Works on all devices
+
+</td>
+<td width="50%">
+
+### 🌐 Localization
+- 🌏 **Bilingual Support** - Nepali, English, or both
+- 🔄 **BS ⇔ AD Conversion** - Accurate conversion (2070-2099 BS)
+- 🔢 **Nepali Numerals** - Full Devanagari number support
+- 📅 **Month & Year Picker** - Quick navigation
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### ⚙️ Technical
+- ⚡ **Zero Dependencies** - Pure vanilla JavaScript
+- 🚀 **Lightweight** - Minimal bundle size
+- 🔧 **Easy Integration** - Simple API
+- 📦 **CDN Ready** - Use via jsDelivr
+
+</td>
+<td width="50%">
+
+### 🎯 User Experience
+- ✅ **Smart Positioning** - Auto-adjusts to viewport
+- 🎯 **Keyboard Friendly** - Full keyboard navigation
+- ♿ **Accessible** - ARIA compliant
+- 💪 **Customizable** - Extensive options
+
+</td>
+</tr>
+</table>
+
+---
 
 ## 📦 Installation
 
@@ -402,5 +447,14 @@ If you have any questions or need help, please:
 ---
 
 <div align="center">
-Made with ❤️ by <a href="https://www.omkumarpandey.com.np/">Om Pandey</a>
+
+## 💖 Made with Love
+
+Created by **[Om Pandey](https://www.omkumarpandey.com.np/)**
+
+[![GitHub](https://img.shields.io/badge/GitHub-@ompandey07-181717?style=for-the-badge&logo=github)](https://github.com/ompandey07)
+[![Website](https://img.shields.io/badge/Website-omkumarpandey.com.np-00ADD8?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.omkumarpandey.com.np/)
+
+### ⭐ Star this repo if you find it helpful!
+
 </div>
