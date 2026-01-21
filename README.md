@@ -2,7 +2,7 @@
 
 # 🗓️ नेपाली मिति पिकर (Nepali Date Picker)
 
-![Nepali Date Picker Logo](Logo.png)
+![Nepali Date Picker Logo](MainLogo.png)
 
 [![Version](https://img.shields.io/badge/version-2.3.0-blue.svg)](https://github.com/ompandey07/nepali-datepicker)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
