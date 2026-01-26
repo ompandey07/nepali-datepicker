@@ -1,7 +1,6 @@
 {
-  "name": "Nepali Date Picker - By Om Pandey",
-  "short_name": "NepaliDatePicker",
-  "description": "A beautiful, modern Nepali (Bikram Sambat) date picker with multiple themes, bilingual support, and complete BS/AD conversion. Zero dependencies, lightweight, and production ready. Developed by Om Pandey.",
+  "name": "Nepali Date",
+  "short_name": "Nepali Date",
   "start_url": "https://nepalidate.omkumarpandey.com.np/",
   "scope": "https://nepalidate.omkumarpandey.com.np/",
   "id": "https://nepalidate.omkumarpandey.com.np/",
@@ -63,37 +62,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    }
-  ],
-  "author": "Om Pandey",
-  "developer": {
-    "name": "Om Pandey",
-    "url": "https://www.omkumarpandey.com.np/"
-  },
-  "categories": [
-    "developer tools",
-    "utilities",
-    "productivity"
-  ],
-  "keywords": [
-    "Nepali Date Picker",
-    "Bikram Sambat",
-    "BS Calendar",
-    "Nepal",
-    "JavaScript",
-    "Date Picker",
-    "Om Pandey"
-  ],
-  "lang": "en",
-  "dir": "ltr",
-  "prefer_related_applications": false,
-  "related_applications": [],
-  "screenshots": [
-    {
-      "src": "MainLogo.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "label": "Nepali Date Picker Logo"
     }
   ]
 }
