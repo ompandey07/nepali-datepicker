@@ -1,0 +1,21 @@
+<!-- 1. Include CSS from local dist or CDN -->
+<link rel="stylesheet" href="dist/nepali-datepicker.css">
+
+<!-- 2. Add container element -->
+<div id="myDatePicker"></div>
+
+<!-- 3. Include JavaScript from local dist or CDN -->
+<script src="dist/nepali-datepicker.js"></script>
+
+<!-- 4. Initialize the date picker -->
+<script>
+  NepaliDatePicker.init('#myDatePicker', {
+    mode: 'bilingual',
+    theme: 'default',
+    onChange: function(date) {
+      console.log('Selected:', date);
+    }
+  });
+</script>
+
+
